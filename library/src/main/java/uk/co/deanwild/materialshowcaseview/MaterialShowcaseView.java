@@ -368,9 +368,23 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         }
     }
 
+    private void setContentTextSize(int textSize) {
+        if (mContentTextView != null) {
+            mContentTextView.setTextSize(textSize);
+        }
+    }
+
     private void setDismissText(CharSequence dismissText) {
         if (mDismissButton != null) {
             mDismissButton.setText(dismissText);
+
+            updateDismissButton();
+        }
+    }
+
+    private void setDismissTextSize(int textSize) {
+        if (mDismissButton != null) {
+            mDismissButton.setTextSize(textSize);
 
             updateDismissButton();
         }
@@ -532,6 +546,11 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             return this;
         }
 
+        public Builder setDismissTextSize(int textSize) {
+            showcaseView.setDismissTextSize(textSize);
+            return this;
+        }
+
         /**
          * Set the content text shown on the ShowcaseView.
          */
@@ -599,6 +618,11 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
 
         public Builder setContentTextColor(int textColour) {
             showcaseView.setContentTextColor(textColour);
+            return this;
+        }
+
+        public Builder setContentTextSize(int textSize) {
+            showcaseView.setContentTextSize(textSize);
             return this;
         }
 
